@@ -21,3 +21,5 @@ The ros2 package used here to access the optitrack tracking information is avail
 
 
 ***While I am able to get the drone to accept the positioning data, a test flight has not been performed as of 8th May 2024***
+
+This repo is still work in progress, more functionality will be added shortly.

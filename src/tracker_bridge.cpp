@@ -38,18 +38,18 @@ class TrackerBridge : public rclcpp::Node
     { 
       // produce position 
       float x = (float)in_msg.pose.position.x;
-      float y = (float)in_msg.pose.position.y;
-      float z = (float)in_msg.pose.position.z;
+      float y = (float)in_msg.pose.position.z;
+      float z = -1 * (float)in_msg.pose.position.y; 
 
       array<float, 3> position = {x,y,z};
 
       // produce rotation 
       float x_q = (float)in_msg.pose.orientation.x;
       float y_q = (float)in_msg.pose.orientation.y;
-      float z_q = (float)in_msg.pose.orientation.z;
+      float z_q = -1* (float)in_msg.pose.orientation.z;
       float w_q = (float)in_msg.pose.orientation.w;
 
-      array<float, 4> q = {x_q,y_q,z_q,w_q};
+      array<float, 4> q = {w_q,x_q,y_q,z_q};
       
       RCLCPP_INFO(this->get_logger(), "stamp: '%i'", in_msg.header.stamp.sec);
 
