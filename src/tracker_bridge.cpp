@@ -45,8 +45,8 @@ class TrackerBridge : public rclcpp::Node
 
       // produce rotation 
       float x_q = (float)in_msg.pose.orientation.x;
-      float y_q = (float)in_msg.pose.orientation.y;
-      float z_q = -1* (float)in_msg.pose.orientation.z;
+      float y_q = (float)in_msg.pose.orientation.z;
+      float z_q = -1* (float)in_msg.pose.orientation.y;
       float w_q = (float)in_msg.pose.orientation.w;
 
       array<float, 4> q = {w_q,x_q,y_q,z_q};
